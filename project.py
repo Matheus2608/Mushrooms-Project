@@ -23,104 +23,103 @@ list_dics = [{'b':0,'c':1,'x':2,'f':3,'k':4,'s':5},
 {'g':0,'l':1,'m':2,'p':3,'u':4,'w':5,'d':6}]
 
 import math
-def calculo_desvio_padrao(matriz, lista_media):
-    desvio_padrao = 0
-    lista_desvio_padrao = []
-    for coluna in range(22):
-        for linha in range(len(matriz)):
-            desvio_padrao += (matriz[linha][coluna] - lista_media[coluna]) ** 2
-        desvio_padrao = math.sqrt(desvio_padrao/Ntrain)
-        lista_desvio_padrao.append(desvio_padrao)
-        desvio_padrao = 0
-    return lista_desvio_padrao
+def calculus_standard_deviation(matrix, avarage_list):
+    standard_deviation = 0
+    list_standard_deviation = []
+    for colun in range(22):
+        for line in range(len(matrix)):
+            standard_deviation += (matrix[line][colun] - avarage_list[colun]) ** 2
+        standard_deviation = math.sqrt(standard_deviation/Ntrain)
+        list_standard_deviation.append(standard_deviation)
+        standard_deviation = 0
+    return list_standard_deviation
 
-def calculo_media(matriz):
-    media = 0
-    lista_media = []
-    for coluna in range(22):
-        for linha in range(len(matriz)):
-            media += matriz[linha][coluna]
-        media = media/Ntrain
-        lista_media.append(media)
-        media = 0
-    return lista_media
+def calculus_avarage(matrix):
+    avarage = 0
+    avarage_list = []
+    for colun in range(22):
+        for line in range(len(matrix)):
+            avarage += matrix[line][colun]
+        avarage = avarage/Ntrain
+        avarage_list.append(avarage)
+        avarage = 0
+    return avarage_list
 
-def calcula_distancia(lista1, lista2):
+def calculus_distance(list1, list2):
     x = 0
-    distancia = 0
+    distance = 0
     while x < 22:
-        distancia += (lista1[x] - lista2[x])**2
+        distance += (list1[x] - list2[x])**2
         x += 1
-    distancia = math.sqrt(distancia)
-    return distancia
+    distance = math.sqrt(distance)
+    return distance
 
-def k_vizinhos(dic):
+def k_neighbors(dic):
     x = dic.keys()
     x = sorted(x)
     x = x[:k]
-    n_estados = []
+    n_features = []
     for key, value in dic.items():
         if key in x:
-            n_estados.append(value)
-    num_p = n_estados.count('p')
-    num_e = n_estados.count('e')
+            n_features.append(value)
+    num_p = n_features.count('p')
+    num_e = n_features.count('e')
     if num_e > num_p:
         return 'e'
     else:
         return 'p'       
-#parte 1
+#part 1
 k = int(input())
 Ntrain, Ntest = input().split()
 Ntrain = int(Ntrain)
 Ntest = int(Ntest)
-matriz_ntrain = []
-for linha in range(Ntrain):
-    atributos = input().split()
-    for coluna in range(len(atributos)):
-        for key, value in list_dics[coluna].items():#transformaçao das letras em numeros
-            if atributos[coluna] == key:
-                atributos[coluna] = value
-    matriz_ntrain.append(atributos)
+matrix_ntrain = []
+for line in range(Ntrain):
+    attributes = input().split()
+    for colun in range(len(attributes)):
+        for key, value in list_dics[colun].items():#transformaçao das letras em numeros
+            if attributes[colun] == key:
+                attributes[colun] = value
+    matrix_ntrain.append(attributes)
 
-v_media = calculo_media(matriz_ntrain)
-v_desvio_padrao = calculo_desvio_padrao(matriz_ntrain,v_media)
-#parte 2
-for linha in range(len(matriz_ntrain)):
-    for coluna in range(22):
-        if v_desvio_padrao[coluna] != 0:
-            matriz_ntrain[linha][coluna] = (matriz_ntrain[linha][coluna] - v_media[coluna]) / v_desvio_padrao[coluna]
+v_avarage = calculus_avarage(matrix_ntrain)
+v_standard_deviation = calculus_standard_deviation(matrix_ntrain,v_avarage)
+#part 2
+for line in range(len(matrix_ntrain)):
+    for colun in range(22):
+        if v_standard_deviation[colun] != 0:
+            matrix_ntrain[line][colun] = (matrix_ntrain[line][colun] - v_avarage[colun]) / v_standard_deviation[colun]
         else:
-            matriz_ntrain[linha][coluna] = 0
+            matrix_ntrain[line][colun] = 0
 
-
-#parte3 
-v_estado = []
+#part 3
+v_feature = []
 for i in range(Ntrain):
     estado = input()
-    v_estado.append(estado)
-#parte4
-matriz_ntest = []
-for linha in range(Ntest):
-    atributos = input().split()
-    for coluna in range(len(atributos)):
-        for key, value in list_dics[coluna].items():#transformaçao das letras em numeros
-            if atributos[coluna] == key:
-                atributos[coluna] = value
-    matriz_ntest.append(atributos)
-for linha in range(len(matriz_ntest)):
-    for coluna in range(22):
-        if v_desvio_padrao[coluna] != 0:
-            matriz_ntest[linha][coluna] = (matriz_ntest[linha][coluna] - v_media[coluna]) / v_desvio_padrao[coluna]
+    v_feature.append(estado)
+#part 4
+matrix_ntest = []
+for line in range(Ntest):
+    attributes = input().split()
+    for colun in range(len(attributes)):
+        for key, value in list_dics[colun].items():#transforming letters in numbers
+            if attributes[colun] == key:
+                attributes[colun] = value
+    matrix_ntest.append(attributes)
+for line in range(len(matrix_ntest)):
+    for colun in range(22):
+        if v_standard_deviation[colun] != 0:
+            matrix_ntest[line][colun] = (matrix_ntest[line][colun] - v_avarage[colun]) / v_standard_deviation[colun]
         else:
-            matriz_ntest[linha][coluna] = 0
-#parte 5
+            matrix_ntest[line][colun] = 0
+#part 5
 
-dic_estado_distancia = {}
+dic_feature_distance = {}
 
-for linha_test in range(Ntest):
-    for linha_train in range(Ntrain):
-        distancia = calcula_distancia(matriz_ntest[linha_test],matriz_ntrain[linha_train])
-        dic_estado_distancia[distancia] = v_estado[linha_train]
-    string = k_vizinhos(dic_estado_distancia)
+for line_test in range(Ntest):
+    for line_train in range(Ntrain):
+        distance = calculus_distance(matrix_ntest[line_test],matrix_ntrain[line_train])
+        dic_feature_distance[distance] = v_feature[line_train]
+    string = k_neighbors(dic_feature_distance)
     print(string)
-    dic_estado_distancia = {}
+    dic_feature_distance = {} 
