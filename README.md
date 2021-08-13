@@ -1,2 +1,2 @@
-# Trabalho-1
-Trabalho 1 de apc que vou colocar no meu resume
+# Mushrooms, poisonous or not
+Using basic machine learning for classifing wheter they are poisonous or not of a bunch of mushrooms by their features.
