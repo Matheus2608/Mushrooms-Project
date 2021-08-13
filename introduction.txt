@@ -1,19 +1,35 @@
-1 -Leia o valor de K, um número inteiro.
-2 -Leia o valor de Ntrain, um número inteiro que indica quantas amostras de treinamento serão dadas.
-3 -Leia o valor de Ntest, um número inteiro que indica quantas amostras de teste serão dadas.
-4 -Leia todos os vetores de treinamento Xtrain, ou seja, leia uma matriz de Ntrain linhas (cogumelos) e D colunas (atributos), onde cada linha representa uma amostra.
-5 -No problema deste projeto, os dados são fornecidos como uma sequencia de caracteres separados por espaço. Para usar uma métrica numérica, é necessário converter esses caracteres em números. Para tal, utilize o "vocabulário" de atributos disponível na seção Attribute Information da página da base de dados, de forma que o valor de atributo listado primeiro é convertido ao número 0, o segundo a 1, e assim por diante. Por exemplo, o terceiro atributo de cogumelos (ou seja, a terceira coluna dos dados) se chama cap-color e pode assumir os seguintes valores:
+1 -Read the value of K, an integer.
+
+2 -Read the value of Ntrain, an integer that indicates how many training samples will be given.
+
+3 -Read the value of Ntest, an integer that indicates how many test samples will be given.
+
+4 - Read all Xtrain training vectors, ie read a matrix of Ntrain rows (mushrooms) and D columns (attributes), where each row represents a sample.
+
+5 - In the problem of this project, the data is provided as a sequence of characters separated by space. To use a numeric metric, you must convert these characters to numbers. To do this, use the attribute "vocabulary" available in the Attribute Information section of the database of mushrooms features, so that the attribute value listed first is converted to the number 0, the second to 1, and so on. For example, the third attribute of mushrooms (that is, the third column of data) is called cap-color and can take on the following values:
+
 6 -brown='n', buff='b', cinnamon='c', gray='g', green='r', pink='p', purple='u', red='e', white='w', yellow='y'.
-7 -Converta o caractere 'n' para 0, 'b' para 1, 'c' para 2, 'g' para 3 e assim por diante. Faça isso para todos os atributos.
-8 -Dada a codificação acima, note que cada atributo poderá terá uma escala diferente da dos outros atributos. Por exemplo, alguns atributos podem assumir somente 2 valores e por isso assumirão no máximo o valor 1, enquanto que outros podem assumir um valor maior que 10. Dada a maneira em que as amostras são comparadas, isso pode injustamente dar mais valor a certos atributos do que outros, sendo que não sabemos qual é a real relevância de cada atributo. Para igualar a relevância dos atributos, os dados devem ser normalizados (ou padronizados). Para tal, é preciso calcular o vetor μ de médias e o vetor σ de desvios padrão para todos os atributos.
-9 -Detalhe importante: ao calcular o desvio padrão, não use a correção de Bessel, ou seja, para cada atributo indexado por j, use a seguinte fórmula: σj=1Ntrain∑Ntraini=1(xi,j−μj)2−−−−−−−−−−−−−−−−−−−−√.
-10 -Para cada atributo, subtraia a média e divida o resultado pelo desvio padrão. Caso um atributo não varie no conjunto de treinamento (ou seja, seu desvio padrão é 0), seu valor deve ser atribuído a 0.
-11 -Leia os rótulos Ytrain, de todas as amostras de treinamento, ou seja, leia um vetor que contém Ntrain elementos, onde cada linha possui apenas um caractere que indica o rótulo, podendo assumir o valor 'p' ou 'e' (de venenoso/ poisonous e comestível/edible).
-12 -Leia todos os vetores de teste Xtest, ou seja, leia uma matriz de Ntest linhas e D colunas, onde cada linha representa um cogumelo a ser classificado.
-13 -Da mesma forma que é feita para o conjunto de treinamento, normalize os dados do conjunto de teste, porém, é importante que ao invés de se calcular a média e o desvio padrão novamente, sejam usados os mesmos vetores μ e σ calculados usando o conjunto de treinamento.
-14 -Para cada vetor de teste xtesti:
-15 -Calcule a distância Euclideana entre esse vetor Xtesti e todos os vetores de treinamento xtrain.
-16 -Nota: para um par de vetores: a e b, ambos contendo D elementos, a distância Euclideana é calculada pela seguinte fórmula:
-17 -d(a,b)=∑Dj=1(aj−bj)2−−−−−−−−−−−−√.
-18 -Verifique, entre os K vizinhos mais próximos de xtesti, se a maioria deles (no conjunto de treinamento) é de cogumelos venenosos ('p') ou comestíveis ('e').
-19 - Imprima o rótulo da classe majoritária obtida no passo anterior ('p' ou 'e').
+
+7 - Convert the character 'n' to 0, 'b' to 1, 'c' to 2, 'g' to 3 and so on. Do this for all attributes.
+
+8 -Given the coding above, note that each attribute may have a different scale from the other attributes. For example, some attributes can only take 2 values ​​and therefore will take a maximum value of 1, while others can take a value greater than 10. Given the way in which samples are compared, this may unfairly give more value to certain attributes than others, as we do not know what the real relevance of each attribute is. To equal the relevance of attributes, data must be normalized (or standardized). To do so, it is necessary to calculate the vector μ of means and the vector σ of standard deviations for all attributes.
+
+9 -Important detail: when calculating the standard deviation, did not use the Bessel correction.
+
+10 -For each attribute, subtract the mean and divide the result by the standard deviation. If an attribute does not vary in the training set (that is, its standard deviation is 0), its value must be set to 0.
+
+11 - Read the Ytrain labels of all training samples, that is, read a vector that contains Ntrain elements, where each line has only one character that indicates the label, which can assume the value 'p' or 'e' (from poisonous/poisonous and edible/edible).
+
+12 -Read all Xtest test vectors, ie read an array of Ntest ​​rows and D columns, where each row represents a mushroom to be sorted.
+
+13 -In the same way as for the training set, normalize the test set data, however, it is important that instead of calculating the mean and standard deviation again, the same vectors μ and σ calculated using the training set.
+
+14 -For each xtesti test vector:
+
+15 -Calculate the Euclidean distance between this Xtesti vector and all xtrain training vectors.
+
+16 -Note: for a pair of vectors: a and b, both containing D elements, is calculated the Euclidean distance between them
+
+18 -Check, among the K closest neighbors of xtesti, if most of them (in the training set) are poisonous ('p') or edible ('e') mushrooms.
+
+19 - Print the label of the majority class obtained in the previous step ('p' or 'e').
