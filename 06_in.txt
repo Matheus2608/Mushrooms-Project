@@ -1,0 +1,87 @@
+5
+36 13
+b s w t a f c b n e c s s w w p w o p k n g
+k s e f f f c n b t ? s s p w p w o e w v p
+x y e f y f c n b t ? k s p p p w o e w v p
+x s e f s f c n b t ? s s w w p w o e w v d
+x s g f n f w b p t e f f w w p w o e n a g
+f f g f f f c b h e b k k n n p w o l h y d
+k s n f n a c b y e ? s s o o p o o p y v l
+x s w f n f w b k t e s f w w p w o e k a g
+f y b t n f c b e e ? s s w w p w t e w c w
+f y e t n f c b p t b s s w g p w o p k y d
+f y e f y f c n b t ? s k p p p w o e w v d
+x s n f f f c n b t ? s s w w p w o e w v l
+x y n f s f c n b t ? s s p w p w o e w v d
+x y w t l f c b k e c s s w w p w o p n s m
+x y n f f f c n b t ? k k w w p w o e w v d
+f y g f f f c b g e b k k n n p w o l h y g
+x y y f f f c b h e b k k p n p w o l h y d
+x y y f f f c b g e b k k n b p w o l h y g
+f y y t a f c b w e r s y w w p w o p k s p
+f y u f n f c n p e ? s f w w p w o f h v d
+f f g t n f c b w t b s s g p p w o p n y d
+x y g f f f c b h e b k k b p p w o l h y d
+f y b t n f c b w e b s s w w p w t p r v m
+f f w f n f w b p t e f s w w p w o e n a g
+f f y f f f c b h e b k k b b p w o l h v p
+x f g f f f c b h e b k k p b p w o l h v p
+x y e t n f c b p t b s s w g p w o p n v d
+f s b t n f c b w e ? s s e e p w t e w c w
+f y g t n f c b p t b s s w w p w o p n y d
+f y g f f f c b p e b k k p p p w o l h y g
+f y w t n f c b w e b s s w w p w t p r v g
+x s n f n a c b o e ? s s o o p n o p n c l
+x y n t n f c b u t b s s g p p w o p n y d
+x y y f f f c b g e b k k b n p w o l h v d
+x f y f f f c b p e b k k n p p w o l h y d
+x f y f f f c b h e b k k n n p w o l h y d
+e
+p
+p
+p
+e
+p
+e
+e
+e
+e
+p
+p
+p
+e
+p
+p
+p
+p
+e
+e
+e
+p
+p
+e
+p
+p
+e
+e
+e
+p
+p
+e
+e
+p
+p
+p
+f s b t f f c b h t b f f w w p w o p h s g
+f s w f n f w b k t e f s w w p w o e n s g
+f f g f n f w b h t e f s w w p w o e k s g
+x y g f f f c b h e b k k b p p w o l h v d
+x y y t a f c b n e r s y w w p w o p n y p
+x f g t n f c b p t b s s g p p w o p k y d
+f f n t n f c b u t b s s g g p w o p n v d
+x s w f n f w b k t e f s w w p w o e n a g
+b s n f n a c b y e ? s s o o p o o p b c l
+f y g f f f c b h e b k k n p p w o l h v p
+f y n f f f c n b t ? s s w w p w o e w v d
+f f e t n f c b p t b s s p p p w o p n y d
+x s b t f f c b p t b f f w w p w o p h v g
