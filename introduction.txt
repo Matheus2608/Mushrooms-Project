@@ -1,0 +1,19 @@
+1 -Leia o valor de K, um número inteiro.
+2 -Leia o valor de Ntrain, um número inteiro que indica quantas amostras de treinamento serão dadas.
+3 -Leia o valor de Ntest, um número inteiro que indica quantas amostras de teste serão dadas.
+4 -Leia todos os vetores de treinamento Xtrain, ou seja, leia uma matriz de Ntrain linhas (cogumelos) e D colunas (atributos), onde cada linha representa uma amostra.
+5 -No problema deste projeto, os dados são fornecidos como uma sequencia de caracteres separados por espaço. Para usar uma métrica numérica, é necessário converter esses caracteres em números. Para tal, utilize o "vocabulário" de atributos disponível na seção Attribute Information da página da base de dados, de forma que o valor de atributo listado primeiro é convertido ao número 0, o segundo a 1, e assim por diante. Por exemplo, o terceiro atributo de cogumelos (ou seja, a terceira coluna dos dados) se chama cap-color e pode assumir os seguintes valores:
+6 -brown='n', buff='b', cinnamon='c', gray='g', green='r', pink='p', purple='u', red='e', white='w', yellow='y'.
+7 -Converta o caractere 'n' para 0, 'b' para 1, 'c' para 2, 'g' para 3 e assim por diante. Faça isso para todos os atributos.
+8 -Dada a codificação acima, note que cada atributo poderá terá uma escala diferente da dos outros atributos. Por exemplo, alguns atributos podem assumir somente 2 valores e por isso assumirão no máximo o valor 1, enquanto que outros podem assumir um valor maior que 10. Dada a maneira em que as amostras são comparadas, isso pode injustamente dar mais valor a certos atributos do que outros, sendo que não sabemos qual é a real relevância de cada atributo. Para igualar a relevância dos atributos, os dados devem ser normalizados (ou padronizados). Para tal, é preciso calcular o vetor μ de médias e o vetor σ de desvios padrão para todos os atributos.
+9 -Detalhe importante: ao calcular o desvio padrão, não use a correção de Bessel, ou seja, para cada atributo indexado por j, use a seguinte fórmula: σj=1Ntrain∑Ntraini=1(xi,j−μj)2−−−−−−−−−−−−−−−−−−−−√.
+10 -Para cada atributo, subtraia a média e divida o resultado pelo desvio padrão. Caso um atributo não varie no conjunto de treinamento (ou seja, seu desvio padrão é 0), seu valor deve ser atribuído a 0.
+11 -Leia os rótulos Ytrain, de todas as amostras de treinamento, ou seja, leia um vetor que contém Ntrain elementos, onde cada linha possui apenas um caractere que indica o rótulo, podendo assumir o valor 'p' ou 'e' (de venenoso/ poisonous e comestível/edible).
+12 -Leia todos os vetores de teste Xtest, ou seja, leia uma matriz de Ntest linhas e D colunas, onde cada linha representa um cogumelo a ser classificado.
+13 -Da mesma forma que é feita para o conjunto de treinamento, normalize os dados do conjunto de teste, porém, é importante que ao invés de se calcular a média e o desvio padrão novamente, sejam usados os mesmos vetores μ e σ calculados usando o conjunto de treinamento.
+14 -Para cada vetor de teste xtesti:
+15 -Calcule a distância Euclideana entre esse vetor Xtesti e todos os vetores de treinamento xtrain.
+16 -Nota: para um par de vetores: a e b, ambos contendo D elementos, a distância Euclideana é calculada pela seguinte fórmula:
+17 -d(a,b)=∑Dj=1(aj−bj)2−−−−−−−−−−−−√.
+18 -Verifique, entre os K vizinhos mais próximos de xtesti, se a maioria deles (no conjunto de treinamento) é de cogumelos venenosos ('p') ou comestíveis ('e').
+19 - Imprima o rótulo da classe majoritária obtida no passo anterior ('p' ou 'e').
