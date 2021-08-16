@@ -1,4 +1,4 @@
-#!usr/env/bin python3
+#!/usr/bin/env python3
 list_dics = [{'b':0,'c':1,'x':2,'f':3,'k':4,'s':5},
 {'f':0,'g':1,'y':2,'s':3},
 {'n':0,'b':1,'c':2,'g':3,'r':4,'p':5,'u':6,'e':7,'w':8,'y':9},
