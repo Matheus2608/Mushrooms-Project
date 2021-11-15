@@ -23,7 +23,22 @@ list_dics = [{'b':0,'c':1,'x':2,'f':3,'k':4,'s':5},
 {'g':0,'l':1,'m':2,'p':3,'u':4,'w':5,'d':6}]
 
 import math
+
+def attributes_in_numbers(x):
+    '''transfrm attributes in numbers'''
+    matrix = []
+    for line in range(x):
+        attributes = input().split()
+        for column in range(len(attributes)):
+            for key, value in list_dics[column].items():
+                if attributes[colun] == key:
+                    attributes[colun] = value
+                    break
+        matrix.append(attributes)
+    return matrix
+        
 def calculus_standard_deviation(matrix, avarage_list):
+    '''Calculate the standard deviation of each column of the matrix '''
     standard_deviation = 0
     list_standard_deviation = []
     for colun in range(22):
@@ -34,7 +49,16 @@ def calculus_standard_deviation(matrix, avarage_list):
         standard_deviation = 0
     return list_standard_deviation
 
+def normalizing(matrix):
+    for line in range(len(matrix)):
+        for column in range(22):
+            if v_standard_deviation[column] != 0:
+                matrix[line][column] = (matrix[line][column] - v_avarage[column]) / v_standard_deviation[column]
+            else:
+                matrix[line][column] = 0
+
 def calculus_avarage(matrix):
+    '''Calculate the avarage of each column of the matrix '''
     avarage = 0
     avarage_list = []
     for colun in range(22):
@@ -46,15 +70,14 @@ def calculus_avarage(matrix):
     return avarage_list
 
 def calculus_distance(list1, list2):
-    x = 0
     distance = 0
-    while x < 22:
-        distance += (list1[x] - list2[x])**2
-        x += 1
+    for i1,i2 in list1,list2:
+        distance += (i1 - i2)**2
     distance = math.sqrt(distance)
     return distance
 
 def k_neighbors(dic):
+    '''Peak the results from the the k most closer results, if the majority is poisonous or not'''
     x = dic.keys()
     x = sorted(x)
     x = x[:k]
@@ -68,51 +91,30 @@ def k_neighbors(dic):
         return 'e'
     else:
         return 'p'       
-#part 1
+
+    
 k = int(input())
 Ntrain, Ntest = input().split()
 Ntrain = int(Ntrain)
 Ntest = int(Ntest)
 matrix_ntrain = []
-for line in range(Ntrain):
-    attributes = input().split()
-    for colun in range(len(attributes)):
-        for key, value in list_dics[colun].items():#transformaçao das letras em numeros
-            if attributes[colun] == key:
-                attributes[colun] = value
-    matrix_ntrain.append(attributes)
 
-v_avarage = calculus_avarage(matrix_ntrain)
-v_standard_deviation = calculus_standard_deviation(matrix_ntrain,v_avarage)
-#part 2
-for line in range(len(matrix_ntrain)):
-    for colun in range(22):
-        if v_standard_deviation[colun] != 0:
-            matrix_ntrain[line][colun] = (matrix_ntrain[line][colun] - v_avarage[colun]) / v_standard_deviation[colun]
-        else:
-            matrix_ntrain[line][colun] = 0
+matrix_ntrain = attributes_in_numbers(Ntrain)
+v_avarage = calculus_avarage(matrix_ntrain) #vector of all avarages
+v_standard_deviation = calculus_standard_deviation(matrix_ntrain,v_avarage) #vector of all standart deviation
 
-#part 3
-v_feature = []
+# normalizing the matrix
+normalizing(matrix_ntrain)
+
+#catching the results if the mushrooms are poisonous or not
+v_result_training = []
 for i in range(Ntrain):
-    estado = input()
-    v_feature.append(estado)
-#part 4
-matrix_ntest = []
-for line in range(Ntest):
-    attributes = input().split()
-    for colun in range(len(attributes)):
-        for key, value in list_dics[colun].items():#transforming letters in numbers
-            if attributes[colun] == key:
-                attributes[colun] = value
-    matrix_ntest.append(attributes)
-for line in range(len(matrix_ntest)):
-    for colun in range(22):
-        if v_standard_deviation[colun] != 0:
-            matrix_ntest[line][colun] = (matrix_ntest[line][colun] - v_avarage[colun]) / v_standard_deviation[colun]
-        else:
-            matrix_ntest[line][colun] = 0
-#part 5
+    result = input()
+    v_result_training.append(result)
+
+#normalizing the ntest matrix with avarage and standart deviation from the training matrix
+matrix_ntest = attributes_in_numbers(Ntest)
+normalizing(matrix_ntest)
 
 dic_feature_distance = {}
 
