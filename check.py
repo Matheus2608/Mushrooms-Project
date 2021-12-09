@@ -1,8 +1,4 @@
-# Este programa assume que sua solucao para o trabalho 2
-# fica no arquivo chamado "solution.py".
-# Modifique a linha abaixo para usar outro nome de arquivo:
-
-nome_do_programa = 'trabalho2.py'
+name_of_script = 'project.py'
 
 import os
 
@@ -15,7 +11,7 @@ while True:
 
     if os.path.exists(in_file):
         print(out_file)
-        os.system('python ' + nome_do_programa + ' < ' + in_file + ' > ' + res_file)
+        os.system('python ' + name_of_script + ' < ' + in_file + ' > ' + res_file)
         os.system('diff ' + res_file + ' ' + out_file)
     else:
         break
