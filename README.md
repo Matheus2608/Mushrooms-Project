@@ -11,6 +11,7 @@ Observation: Let me know if you any of my tests are incorrect!
 
 🔎 Understanding:
 - First, the main ideia of this project is based on K-nearest neighbors algorithm, so if you' re not familiar with it, go check it out [here](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm)
-<img src="https://aimlsite.files.wordpress.com/2017/10/knn.png?w=1008" style="text-align: center">
+<div style="background-color: blue"><img src="https://aimlsite.files.wordpress.com/2017/10/knn.png?w=1008"></div>
+
 - In [mushrooms_features.txt](/mushrooms_features.txt) is detailed the characteristics of the mushrooms in a dictionary.
 - In [introduction.txt](/introduction.txt) is saying how the script works
