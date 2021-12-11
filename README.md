@@ -15,4 +15,4 @@ Observation: Let me know if you any of my tests are incorrect!
     <img src="https://aimlsite.files.wordpress.com/2017/10/knn.png?w=1008" alt="Autoplay"/>
 </p>
 - In [mushrooms_features.txt](/mushrooms_features.txt) is detailed the characteristics of the mushrooms in a dictionary.
-- In [introduction.txt](/introduction.txt) is saying how the script works
+- In [introduction.md](/introduction.md) is saying how the script works
